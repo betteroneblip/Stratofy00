@@ -7,7 +7,7 @@ body {
   font-family: Arial, sans-serif;
   background: #121212;
   color: white;
-  padding-bottom: 90px; /* espaço pro player */
+  padding-bottom: 90px;
 }
 
 h1 {
@@ -70,7 +70,7 @@ audio {
   width: 100%;
 }
 
-/* 📱 TELAS MAIORES (TABLET / PC) */
+/* 📱➡️💻 Telas maiores */
 @media (min-width: 768px) {
   h1 {
     font-size: 24px;
