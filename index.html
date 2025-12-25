@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Meu Player</title>
+
+  <!-- Responsividade -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Minhas Músicas</h1>
+  <h1>Minhas Músicas</h1>
 
-<div class="grid">
+  <div class="grid">
 
-  <div class="card" onclick="playMusic(
-    'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-    'Música 1'
-  )">
-    <div class="cover"></div>
-    <p>Música 1</p>
+    <div class="card" onclick="playMusic(
+      'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+      'Música 1'
+    )">
+      <div class="cover"></div>
+      <p>Música 1</p>
+    </div>
+
+    <div class="card" onclick="playMusic(
+      'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+      'Música 2'
+    )">
+      <div class="cover"></div>
+      <p>Música 2</p>
+    </div>
+
+    <div class="card" onclick="playMusic(
+      'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+      'Música 3'
+    )">
+      <div class="cover"></div>
+      <p>Música 3</p>
+    </div>
+
   </div>
 
-  <div class="card" onclick="playMusic(
-    'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-    'Música 2'
-  )">
-    <div class="cover"></div>
-    <p>Música 2</p>
+  <!-- Player fixo -->
+  <div class="player">
+    <p id="nowPlaying">Nenhuma música tocando</p>
+    <audio id="audio" controls></audio>
   </div>
 
-</div>
-
-<div class="player">
-  <p id="nowPlaying">Nenhuma música tocando</p>
-  <audio id="audio" controls></audio>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
