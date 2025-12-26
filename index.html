@@ -3,36 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Stratosfy</title>
-
-  <!-- Responsividade -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ================= HOME ================= -->
-<div id="home">
+<div class="screen-container">
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="user">
-      <div class="avatar"></div>
-      <div>
-        <span class="hello">Olá 👋</span><br>
-        <strong class="name">Stratosfy</strong>
+  <!-- ================= HOME ================= -->
+  <div id="home">
+
+    <header class="header">
+      <div class="user">
+        <div class="avatar"></div>
+        <div>
+          <span class="hello">Olá 👋</span><br>
+          <strong class="name">Stratosfy</strong>
+        </div>
       </div>
-    </div>
 
-    <div class="header-icons">
-      <span>🔍</span>
-      <span>♡</span>
-    </div>
-  </header>
+      <div class="header-icons">
+        <span>🔍</span>
+        <span>♡</span>
+      </div>
+    </header>
 
-  <!-- CARD DESTAQUE -->
-  <section class="highlight">
-    <div class="highlight-content">
+    <section class="highlight">
       <h2>Descobertas da semana</h2>
       <p>Sons autorais e instrumentais</p>
 
@@ -40,55 +36,50 @@
         <button class="play">▶</button>
         <button class="like">♡</button>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PLAYLISTS -->
-  <section class="section">
-    <h3>Playlists pra você</h3>
+    <section class="section">
+      <h3>Playlists pra você</h3>
 
-    <div class="playlist-grid">
+      <div class="playlist-grid">
+        <div class="playlist-card" onclick="openPlaylist('Chill Espacial')">
+          <span>Chill Espacial</span>
+        </div>
 
-      <div class="playlist-card" onclick="openPlaylist('Chill Espacial')">
-        <span>Chill Espacial</span>
+        <div class="playlist-card" onclick="openPlaylist('Instrumentais')">
+          <span>Instrumentais</span>
+        </div>
+
+        <div class="playlist-card" onclick="openPlaylist('Minhas Produções')">
+          <span>Minhas Produções</span>
+        </div>
+
+        <div class="playlist-card" onclick="openPlaylist('Favoritas')">
+          <span>Favoritas</span>
+        </div>
       </div>
+    </section>
 
-      <div class="playlist-card" onclick="openPlaylist('Instrumentais')">
-        <span>Instrumentais</span>
-      </div>
-
-      <div class="playlist-card" onclick="openPlaylist('Minhas Produções')">
-        <span>Minhas Produções</span>
-      </div>
-
-      <div class="playlist-card" onclick="openPlaylist('Favoritas')">
-        <span>Favoritas</span>
-      </div>
-
-    </div>
-  </section>
-
-</div>
-<!-- =============== FIM HOME =============== -->
-
-
-<!-- ============ TELA DA PLAYLIST ============ -->
-<div id="playlist-screen" class="hidden">
-
-  <header class="playlist-header">
-    <button onclick="goHome()">←</button>
-    <h2 id="playlist-title">Playlist</h2>
-  </header>
-
-  <div class="playlist-content">
-    <p>Em breve: músicas dessa playlist 🎧</p>
   </div>
+  <!-- =============== FIM HOME =============== -->
+
+  <!-- ============ PLAYLIST SCREEN ============ -->
+  <div id="playlist-screen" class="hidden">
+
+    <header class="playlist-header">
+      <button onclick="goHome()">←</button>
+      <h2 id="playlist-title">Playlist</h2>
+    </header>
+
+    <div class="playlist-content">
+      <p>Em breve: músicas dessa playlist 🎧</p>
+    </div>
+
+  </div>
+  <!-- ========== FIM PLAYLIST SCREEN ========== -->
 
 </div>
-<!-- ========= FIM TELA DA PLAYLIST =========== -->
 
-
-<!-- BOTTOM BAR -->
 <nav class="bottom-bar">
   <div class="nav-item active">🏠</div>
   <div class="nav-item">🔍</div>
