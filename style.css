@@ -210,4 +210,49 @@ body {
   opacity: 0.8;
 }
 
+/* TRANSIÇÕES ENTRE TELAS */
+#home,
+#playlist-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* HOME - estado normal */
+#home {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* HOME - saindo */
+#home.exit {
+  transform: translateX(-40%);
+  opacity: 0;
+}
+
+/* PLAYLIST - escondida à direita */
+#playlist-screen {
+  background: linear-gradient(
+    180deg,
+    #1c1f3a 0%,
+    #0b0e14 60%
+  );
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* PLAYLIST - entrando */
+#playlist-screen.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Classe hidden continua existindo */
+.hidden {
+  display: none;
+}
+
 
