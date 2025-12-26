@@ -10,7 +10,7 @@
 
 <div class="screen-container">
 
-  <!-- ================= HOME ================= -->
+  <!-- HOME -->
   <div id="home">
 
     <header class="header">
@@ -21,7 +21,6 @@
           <strong class="name">Stratosfy</strong>
         </div>
       </div>
-
       <div class="header-icons">
         <span>🔍</span>
         <span>♡</span>
@@ -31,7 +30,6 @@
     <section class="highlight">
       <h2>Descobertas da semana</h2>
       <p>Sons autorais e instrumentais</p>
-
       <div class="actions">
         <button class="play">▶</button>
         <button class="like">♡</button>
@@ -40,30 +38,17 @@
 
     <section class="section">
       <h3>Playlists pra você</h3>
-
       <div class="playlist-grid">
-        <div class="playlist-card" onclick="openPlaylist('Chill Espacial')">
-          <span>Chill Espacial</span>
-        </div>
-
-        <div class="playlist-card" onclick="openPlaylist('Instrumentais')">
-          <span>Instrumentais</span>
-        </div>
-
-        <div class="playlist-card" onclick="openPlaylist('Minhas Produções')">
-          <span>Minhas Produções</span>
-        </div>
-
-        <div class="playlist-card" onclick="openPlaylist('Favoritas')">
-          <span>Favoritas</span>
-        </div>
+        <div class="playlist-card" onclick="openPlaylist('Chill Espacial')"><span>Chill Espacial</span></div>
+        <div class="playlist-card" onclick="openPlaylist('Instrumentais')"><span>Instrumentais</span></div>
+        <div class="playlist-card" onclick="openPlaylist('Minhas Produções')"><span>Minhas Produções</span></div>
+        <div class="playlist-card" onclick="openPlaylist('Favoritas')"><span>Favoritas</span></div>
       </div>
     </section>
 
   </div>
-  <!-- =============== FIM HOME =============== -->
 
-  <!-- ============ PLAYLIST SCREEN ============ -->
+  <!-- PLAYLIST -->
   <div id="playlist-screen" class="hidden">
 
     <header class="playlist-header">
@@ -71,50 +56,52 @@
       <h2 id="playlist-title">Playlist</h2>
     </header>
 
-   <div class="playlist-content">
+    <div class="playlist-content">
 
-  <div class="track">
-    <span class="track-number">1</span>
-    <span class="track-title">Nebulosa Azul</span>
-    <span class="track-time">3:12</span>
-    <span class="track-play">▶</span>
-  </div>
+      <div class="track">
+        <span class="track-number">1</span>
+        <span class="track-title">Nebulosa Azul</span>
+        <span class="track-time">3:12</span>
+        <span class="track-play" onclick="playTrack('Nebulosa Azul','https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')">▶</span>
+      </div>
 
-  <div class="track">
-    <span class="track-number">2</span>
-    <span class="track-title">Órbita Lenta</span>
-    <span class="track-time">2:48</span>
-    <span class="track-play">▶</span>
-  </div>
+      <div class="track">
+        <span class="track-number">2</span>
+        <span class="track-title">Órbita Lenta</span>
+        <span class="track-time">2:48</span>
+        <span class="track-play" onclick="playTrack('Órbita Lenta','https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')">▶</span>
+      </div>
 
-  <div class="track">
-    <span class="track-number">3</span>
-    <span class="track-title">Gravidade Zero</span>
-    <span class="track-time">4:01</span>
-    <span class="track-play">▶</span>
-  </div>
+      <div class="track">
+        <span class="track-number">3</span>
+        <span class="track-title">Gravidade Zero</span>
+        <span class="track-time">4:01</span>
+        <span class="track-play" onclick="playTrack('Gravidade Zero','https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3')">▶</span>
+      </div>
 
-  <div class="track">
-    <span class="track-number">4</span>
-    <span class="track-title">Eco Cósmico</span>
-    <span class="track-time">3:35</span>
-    <span class="track-play">▶</span>
+    </div>
   </div>
 
 </div>
 
-  <!-- ========== FIM PLAYLIST SCREEN ========== -->
-
+<!-- MINI PLAYER -->
+<div id="mini-player" class="mini-player hidden">
+  <span id="mini-title">Tocando</span>
+  <button onclick="togglePlay()" id="mini-btn">⏸</button>
 </div>
 
+<!-- BOTTOM BAR -->
 <nav class="bottom-bar">
-  <div class="nav-item active">🏠</div>
-  <div class="nav-item">🔍</div>
-  <div class="nav-item">🎶</div>
-  <div class="nav-item">📚</div>
+  <span class="nav-item active">🏠</span>
+  <span class="nav-item">🔍</span>
+  <span class="nav-item">🎶</span>
+  <span class="nav-item">📚</span>
 </nav>
 
+<audio id="audio"></audio>
 <script src="script.js"></script>
 </body>
 </html>
+
+
 
