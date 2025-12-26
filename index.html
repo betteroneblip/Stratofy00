@@ -4,19 +4,22 @@
   <meta charset="UTF-8">
   <title>Stratosfy</title>
 
-  <!-- Mobile first -->
+  <!-- Responsividade -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- ================= HOME ================= -->
+<div id="home">
+
   <!-- HEADER -->
   <header class="header">
     <div class="user">
       <div class="avatar"></div>
       <div>
-        <span class="hello">Olá 👋</span>
+        <span class="hello">Olá 👋</span><br>
         <strong class="name">Stratosfy</strong>
       </div>
     </div>
@@ -44,37 +47,55 @@
   <section class="section">
     <h3>Playlists pra você</h3>
 
-   <div class="playlist-grid">
+    <div class="playlist-grid">
 
-  <div class="playlist-card" onclick="openPlaylist('Chill Espacial')">
-    <span>Chill Espacial</span>
-  </div>
+      <div class="playlist-card" onclick="openPlaylist('Chill Espacial')">
+        <span>Chill Espacial</span>
+      </div>
 
-  <div class="playlist-card" onclick="openPlaylist('Instrumentais')">
-    <span>Instrumentais</span>
-  </div>
+      <div class="playlist-card" onclick="openPlaylist('Instrumentais')">
+        <span>Instrumentais</span>
+      </div>
 
-  <div class="playlist-card" onclick="openPlaylist('Minhas Produções')">
-    <span>Minhas Produções</span>
-  </div>
+      <div class="playlist-card" onclick="openPlaylist('Minhas Produções')">
+        <span>Minhas Produções</span>
+      </div>
 
-  <div class="playlist-card" onclick="openPlaylist('Favoritas')">
-    <span>Favoritas</span>
-  </div>
-       </section>
+      <div class="playlist-card" onclick="openPlaylist('Favoritas')">
+        <span>Favoritas</span>
+      </div>
+
+    </div>
+  </section>
 
 </div>
+<!-- =============== FIM HOME =============== -->
 
 
-  <!-- BOTTOM BAR -->
-  <nav class="bottom-bar">
-    <div class="nav-item active">🏠</div>
-    <div class="nav-item">🔍</div>
-    <div class="nav-item">🎶</div>
-    <div class="nav-item">📚</div>
-  </nav>
+<!-- ============ TELA DA PLAYLIST ============ -->
+<div id="playlist-screen" class="hidden">
 
+  <header class="playlist-header">
+    <button onclick="goHome()">←</button>
+    <h2 id="playlist-title">Playlist</h2>
+  </header>
+
+  <div class="playlist-content">
+    <p>Em breve: músicas dessa playlist 🎧</p>
+  </div>
+
+</div>
+<!-- ========= FIM TELA DA PLAYLIST =========== -->
+
+
+<!-- BOTTOM BAR -->
+<nav class="bottom-bar">
+  <div class="nav-item active">🏠</div>
+  <div class="nav-item">🔍</div>
+  <div class="nav-item">🎶</div>
+  <div class="nav-item">📚</div>
+</nav>
+
+<script src="script.js"></script>
 </body>
 </html>
-
-
