@@ -1,10 +1,27 @@
 function openPlaylist(nome) {
-  document.getElementById("home").style.display = "none";
-  document.getElementById("playlist-screen").classList.remove("hidden");
+  const home = document.getElementById("home");
+  const playlist = document.getElementById("playlist-screen");
+
   document.getElementById("playlist-title").innerText = nome;
+
+  home.classList.add("exit");
+  playlist.classList.remove("hidden");
+
+  setTimeout(() => {
+    home.style.display = "none";
+    playlist.classList.add("show");
+  }, 300);
 }
 
 function goHome() {
-  document.getElementById("playlist-screen").classList.add("hidden");
-  document.getElementById("home").style.display = "block";
+  const home = document.getElementById("home");
+  const playlist = document.getElementById("playlist-screen");
+
+  playlist.classList.remove("show");
+
+  setTimeout(() => {
+    playlist.classList.add("hidden");
+    home.style.display = "block";
+    home.classList.remove("exit");
+  }, 300);
 }
