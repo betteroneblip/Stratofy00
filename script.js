@@ -1,36 +1,45 @@
-const audio=document.getElementById("audio");
-const mini=document.getElementById("mini-player");
-const title=document.getElementById("mini-title");
-const btn=document.getElementById("mini-btn");
+const audio = document.getElementById("audio");
+const now = document.getElementById("now-playing");
+const bottom = document.querySelector(".bottom-bar");
+const title = document.getElementById("now-title");
+const cover = document.getElementById("now-cover");
+const progress = document.getElementById("progress");
 
-let playing=false;
-
-function openPlaylist(nome){
-  document.getElementById("playlist-title").innerText=nome;
-  document.getElementById("home").classList.add("exit");
-  const p=document.getElementById("playlist-screen");
-  p.classList.remove("hidden");
-  p.classList.add("show");
+function openPlaylist(){
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("playlist-screen").classList.remove("hidden");
 }
 
 function goHome(){
-  document.getElementById("home").classList.remove("exit");
-  const p=document.getElementById("playlist-screen");
-  p.classList.remove("show");
-  setTimeout(()=>p.classList.add("hidden"),300);
+  document.getElementById("playlist-screen").classList.add("hidden");
+  document.getElementById("home").classList.remove("hidden");
 }
 
-function playTrack(name,url){
-  audio.src=url;
+function playTrack(t,u,c){
+  audio.src=u;
   audio.play();
-  title.innerText=name;
-  mini.classList.remove("hidden");
-  btn.innerText="⏸";
-  playing=true;
+  title.innerText=t;
+  cover.src=c;
+  now.classList.remove("hidden");
+  bottom.style.display="none";
 }
 
-function togglePlay(){
-  if(playing){audio.pause();btn.innerText="▶";}
-  else{audio.play();btn.innerText="⏸";}
-  playing=!playing;
+function closeNow(){
+  now.classList.add("hidden");
+  bottom.style.display="flex";
 }
+
+function toggle(){
+  audio.paused ? audio.play() : audio.pause();
+}
+
+audio.ontimeupdate=()=>{
+  progress.value=(audio.currentTime/audio.duration)*100||0;
+}
+
+progress.oninput=()=>{
+  audio.currentTime=(progress.value/100)*audio.duration;
+}
+
+function next(){}
+function prev(){}
