@@ -181,3 +181,33 @@ body {
   text-shadow: 0 0 10px rgba(255,110,199,0.8);
 }
 
+.hidden {
+  display: none;
+}
+
+/* TELA DE PLAYLIST */
+.playlist-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.playlist-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.playlist-header h2 {
+  font-size: 18px;
+}
+
+.playlist-content {
+  padding: 16px;
+  opacity: 0.8;
+}
+
+
