@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +15,7 @@ body {
   padding-bottom: 120px;
 }
 
-/* CONTAINER DE TELAS */
+/* CONTAINER DAS TELAS */
 .screen-container {
   position: relative;
   width: 100%;
@@ -36,6 +37,8 @@ body {
   min-height: 100vh;
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
+
+/* ================= HOME ================= */
 
 /* HEADER */
 .header {
@@ -67,6 +70,7 @@ body {
   font-size: 16px;
 }
 
+/* Ícones do topo */
 .header-icons span {
   font-size: 18px;
   margin-left: 14px;
@@ -91,6 +95,7 @@ body {
   opacity: 0.9;
 }
 
+/* BOTÕES DO CARD */
 .actions {
   margin-top: 16px;
   display: flex;
@@ -126,7 +131,7 @@ body {
   margin-bottom: 12px;
 }
 
-/* GRID */
+/* GRID DE PLAYLISTS */
 .playlist-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -137,14 +142,17 @@ body {
   height: 140px;
   border-radius: 20px;
   padding: 16px;
+
   background: linear-gradient(
     160deg,
     rgba(155,124,255,0.45),
     rgba(0,0,0,0.75)
   );
+
   display: flex;
   align-items: flex-end;
   cursor: pointer;
+
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -161,10 +169,13 @@ body {
   box-shadow: 0 10px 30px rgba(155,124,255,0.35);
 }
 
-/* PLAYLIST SCREEN */
+/* ================= PLAYLIST SCREEN ================= */
+
 #playlist-screen {
   transform: translateX(100%);
   opacity: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 #playlist-screen.show {
@@ -172,75 +183,45 @@ body {
   opacity: 1;
 }
 
+/* HOME SAINDO */
 #home.exit {
   transform: translateX(-40%);
   opacity: 0;
 }
 
+/* HEADER DA PLAYLIST */
 .playlist-header {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 16px;
+  padding: 20px 16px 8px 16px;
 }
 
 .playlist-header button {
   background: none;
   border: none;
-  color: #fff;
+  color: #ffffff;
   font-size: 22px;
   cursor: pointer;
 }
 
+/* CONTEÚDO DA PLAYLIST */
 .playlist-content {
   padding: 16px;
-  opacity: 0.8;
+  padding-bottom: 120px; /* espaço da bottom bar */
 }
 
-/* BOTTOM BAR */
-.bottom-bar {
-  position: fixed;
-  bottom: 16px;
-  left: 16px;
-  right: 16px;
-  height: 64px;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(12px);
-  border-radius: 32px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-}
-
-.nav-item {
-  font-size: 20px;
-  opacity: 0.6;
-}
-
-.nav-item.active {
-  opacity: 1;
-  color: #ff6ec7;
-  text-shadow: 0 0 10px rgba(255,110,199,0.8);
-}
-
-/* RESPONSIVO */
-@media (min-width: 768px) {
-  .playlist-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* LISTA DE MÚSICAS (PLAYLIST) */
+/* LISTA DE MÚSICAS */
 .track {
   display: grid;
   grid-template-columns: 24px 1fr 50px 30px;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 
-  padding: 12px 0;
+  padding: 14px 0;
+  margin-bottom: 4px;
+
   border-bottom: 1px solid rgba(255,255,255,0.08);
-
   font-size: 14px;
 }
 
@@ -268,4 +249,43 @@ body {
 
 .track-play:hover {
   opacity: 1;
+}
+
+/* ================= BOTTOM BAR ================= */
+
+.bottom-bar {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  height: 64px;
+
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(12px);
+  border-radius: 32px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.nav-item {
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+.nav-item.active {
+  opacity: 1;
+  color: #ff6ec7;
+  text-shadow: 0 0 10px rgba(255,110,199,0.8);
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (min-width: 768px) {
+  .playlist-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
