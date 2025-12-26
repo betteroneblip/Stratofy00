@@ -2,52 +2,63 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Meu Player</title>
+  <title>Stratosfy</title>
 
-  <!-- Responsividade -->
+  <!-- Mobile first -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Stratofy</h1>
-
-  <div class="grid">
-
-    <div class="card" onclick="playMusic(
-      'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-      'Música 1'
-    )">
-      <div class="cover"></div>
-      <p>Música 1</p>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="user">
+      <div class="avatar"></div>
+      <div>
+        <span class="hello">Olá 👋</span>
+        <strong class="name">Stratosfy</strong>
+      </div>
     </div>
 
-    <div class="card" onclick="playMusic(
-      'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-      'Música 2'
-    )">
-      <div class="cover"></div>
-      <p>Música 2</p>
+    <div class="header-icons">
+      <span>🔍</span>
+      <span>♡</span>
     </div>
+  </header>
 
-    <div class="card" onclick="playMusic(
-      'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
-      'Música 3'
-    )">
-      <div class="cover"></div>
-      <p>Música 3</p>
+  <!-- CARD DESTAQUE -->
+  <section class="highlight">
+    <div class="highlight-content">
+      <h2>Descobertas da semana</h2>
+      <p>Sons autorais e instrumentais</p>
+
+      <div class="actions">
+        <button class="play">▶</button>
+        <button class="like">♡</button>
+      </div>
     </div>
+  </section>
 
-  </div>
+  <!-- PLAYLISTS -->
+  <section class="section">
+    <h3>Playlists pra você</h3>
 
-  <!-- Player fixo -->
-  <div class="player">
-    <p id="nowPlaying">Nenhuma música tocando</p>
-    <audio id="audio" controls></audio>
-  </div>
+    <div class="playlist-grid">
+      <div class="playlist-card"></div>
+      <div class="playlist-card"></div>
+      <div class="playlist-card"></div>
+      <div class="playlist-card"></div>
+    </div>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- BOTTOM BAR -->
+  <nav class="bottom-bar">
+    <div class="nav-item active">🏠</div>
+    <div class="nav-item">🔍</div>
+    <div class="nav-item">🎶</div>
+    <div class="nav-item">📚</div>
+  </nav>
+
 </body>
 </html>
-
