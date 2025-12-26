@@ -12,14 +12,6 @@ body {
   color: #ffffff;
   min-height: 100vh;
   overflow-x: hidden;
- body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #1c1f3a 0%, #0b0e14 60%);
-  color: #ffffff;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
 }
 
 /* CONTAINER DAS TELAS */
@@ -297,5 +289,6 @@ body {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 
 
