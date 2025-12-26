@@ -122,12 +122,34 @@ body {
 .playlist-card {
   height: 140px;
   border-radius: 20px;
+  padding: 16px;
+
   background: linear-gradient(
     160deg,
-    rgba(155,124,255,0.4),
-    rgba(0,0,0,0.6)
+    rgba(155,124,255,0.45),
+    rgba(0,0,0,0.7)
   );
+
+  display: flex;
+  align-items: flex-end;
+
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
+.playlist-card span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.playlist-card:active {
+  transform: scale(0.96);
+}
+
+.playlist-card:hover {
+  box-shadow: 0 10px 30px rgba(155,124,255,0.35);
+}
+
 
 /* BOTTOM BAR (GLASSMORPHISM) */
 .bottom-bar {
@@ -158,3 +180,4 @@ body {
   color: #ff6ec7;
   text-shadow: 0 0 10px rgba(255,110,199,0.8);
 }
+
