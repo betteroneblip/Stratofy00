@@ -1,26 +1,36 @@
-function openPlaylist(nome) {
-  const home = document.getElementById("home");
-  const playlist = document.getElementById("playlist-screen");
+const audio=document.getElementById("audio");
+const mini=document.getElementById("mini-player");
+const title=document.getElementById("mini-title");
+const btn=document.getElementById("mini-btn");
 
-  document.getElementById("playlist-title").innerText = nome;
+let playing=false;
 
-  playlist.classList.remove("hidden");
-
-  // força render
-  playlist.offsetHeight;
-
-  home.classList.add("exit");
-  playlist.classList.add("show");
+function openPlaylist(nome){
+  document.getElementById("playlist-title").innerText=nome;
+  document.getElementById("home").classList.add("exit");
+  const p=document.getElementById("playlist-screen");
+  p.classList.remove("hidden");
+  p.classList.add("show");
 }
 
-function goHome() {
-  const home = document.getElementById("home");
-  const playlist = document.getElementById("playlist-screen");
+function goHome(){
+  document.getElementById("home").classList.remove("exit");
+  const p=document.getElementById("playlist-screen");
+  p.classList.remove("show");
+  setTimeout(()=>p.classList.add("hidden"),300);
+}
 
-  home.classList.remove("exit");
-  playlist.classList.remove("show");
+function playTrack(name,url){
+  audio.src=url;
+  audio.play();
+  title.innerText=name;
+  mini.classList.remove("hidden");
+  btn.innerText="⏸";
+  playing=true;
+}
 
-  setTimeout(() => {
-    playlist.classList.add("hidden");
-  }, 350);
+function togglePlay(){
+  if(playing){audio.pause();btn.innerText="▶";}
+  else{audio.play();btn.innerText="⏸";}
+  playing=!playing;
 }
