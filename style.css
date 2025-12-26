@@ -183,11 +183,7 @@ body {
   opacity: 0;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-}
-
-#playlist-screen {
   min-height: 100vh;
-  overflow-y: auto;
 }
 
 #playlist-screen.show {
@@ -301,4 +297,5 @@ body {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 
