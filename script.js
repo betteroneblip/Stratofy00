@@ -4,24 +4,32 @@ function openPlaylist(nome) {
 
   document.getElementById("playlist-title").innerText = nome;
 
-  home.classList.add("exit");
+  // prepara playlist
   playlist.classList.remove("hidden");
+  playlist.style.transform = "translateX(100%)";
 
-  setTimeout(() => {
-    home.style.display = "none";
-    playlist.classList.add("show");
-  }, 300);
+  // força reflow (truque necessário)
+  playlist.offsetHeight;
+
+  // anima
+  home.style.transform = "translateX(-40%)";
+  home.style.opacity = "0";
+
+  playlist.style.transform = "translateX(0)";
+  playlist.style.opacity = "1";
 }
 
 function goHome() {
   const home = document.getElementById("home");
   const playlist = document.getElementById("playlist-screen");
 
-  playlist.classList.remove("show");
+  home.style.transform = "translateX(0)";
+  home.style.opacity = "1";
+
+  playlist.style.transform = "translateX(100%)";
+  playlist.style.opacity = "0";
 
   setTimeout(() => {
     playlist.classList.add("hidden");
-    home.style.display = "block";
-    home.classList.remove("exit");
-  }, 300);
+  }, 350);
 }
