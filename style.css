@@ -1,9 +1,5 @@
 *{margin:0;padding:0;box-sizing:border-box}
 
-body {
-  background: red !important;
-}
-
 body{
   font-family:Arial,sans-serif;
   background:linear-gradient(180deg,#1c1f3a,#0b0e14);
@@ -136,5 +132,6 @@ body{
   justify-content:space-around;
   align-items:center
 }
+
 
 
