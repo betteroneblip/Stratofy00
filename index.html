@@ -12,96 +12,87 @@
 
   <!-- HOME -->
   <div id="home">
-
     <header class="header">
       <div class="user">
         <div class="avatar"></div>
         <div>
           <span class="hello">Olá 👋</span><br>
-          <strong class="name">Stratosfy</strong>
+          <strong>Stratosfy</strong>
         </div>
-      </div>
-      <div class="header-icons">
-        <span>🔍</span>
-        <span>♡</span>
       </div>
     </header>
 
     <section class="highlight">
       <h2>Descobertas da semana</h2>
       <p>Sons autorais e instrumentais</p>
-      <div class="actions">
-        <button class="play">▶</button>
-        <button class="like">♡</button>
-      </div>
     </section>
 
     <section class="section">
-      <h3>Playlists pra você</h3>
+      <h3>Playlists</h3>
       <div class="playlist-grid">
-        <div class="playlist-card" onclick="openPlaylist('Chill Espacial')"><span>Chill Espacial</span></div>
-        <div class="playlist-card" onclick="openPlaylist('Instrumentais')"><span>Instrumentais</span></div>
-        <div class="playlist-card" onclick="openPlaylist('Minhas Produções')"><span>Minhas Produções</span></div>
-        <div class="playlist-card" onclick="openPlaylist('Favoritas')"><span>Favoritas</span></div>
+        <div class="playlist-card" onclick="openPlaylist()">Chill Espacial</div>
       </div>
     </section>
-
   </div>
 
   <!-- PLAYLIST -->
   <div id="playlist-screen" class="hidden">
-
     <header class="playlist-header">
       <button onclick="goHome()">←</button>
-      <h2 id="playlist-title">Playlist</h2>
+      <h2>Chill Espacial</h2>
     </header>
 
     <div class="playlist-content">
-
       <div class="track">
-        <span class="track-number">1</span>
-        <span class="track-title">Nebulosa Azul</span>
-        <span class="track-time">3:12</span>
-        <span class="track-play" onclick="playTrack('Nebulosa Azul','https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')">▶</span>
+        <span>1</span>
+        <span>Nebulosa Azul</span>
+        <span>3:12</span>
+        <span class="play"
+          onclick="playTrack(
+            'Nebulosa Azul',
+            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+            'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4'
+          )">▶</span>
       </div>
+    </div>
+  </div>
 
-      <div class="track">
-        <span class="track-number">2</span>
-        <span class="track-title">Órbita Lenta</span>
-        <span class="track-time">2:48</span>
-        <span class="track-play" onclick="playTrack('Órbita Lenta','https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')">▶</span>
-      </div>
+  <!-- NOW PLAYING -->
+  <div id="now-playing" class="hidden">
+    <header class="now-header">
+      <button onclick="closeNow()">⌄</button>
+      <span>Tocando agora</span>
+      <span></span>
+    </header>
 
-      <div class="track">
-        <span class="track-number">3</span>
-        <span class="track-title">Gravidade Zero</span>
-        <span class="track-time">4:01</span>
-        <span class="track-play" onclick="playTrack('Gravidade Zero','https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3')">▶</span>
-      </div>
+    <div class="cover">
+      <img id="now-cover">
+    </div>
 
+    <div class="now-info">
+      <h2 id="now-title"></h2>
+    </div>
+
+    <input type="range" id="progress" value="0">
+
+    <div class="controls">
+      <button onclick="prev()">⏮</button>
+      <button class="big" onclick="toggle()">⏯</button>
+      <button onclick="next()">⏭</button>
     </div>
   </div>
 
 </div>
 
-<!-- MINI PLAYER -->
-<div id="mini-player" class="mini-player hidden">
-  <span id="mini-title">Tocando</span>
-  <button onclick="togglePlay()" id="mini-btn">⏸</button>
-</div>
-
-<!-- BOTTOM BAR -->
+<!-- MENU -->
 <nav class="bottom-bar">
-  <span class="nav-item active">🏠</span>
-  <span class="nav-item">🔍</span>
-  <span class="nav-item">🎶</span>
-  <span class="nav-item">📚</span>
+  <span>🏠</span>
+  <span>🔍</span>
+  <span>🎶</span>
+  <span>📚</span>
 </nav>
 
 <audio id="audio"></audio>
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
