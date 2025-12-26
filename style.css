@@ -12,7 +12,14 @@ body {
   color: #ffffff;
   min-height: 100vh;
   overflow-x: hidden;
-  padding-bottom: 120px;
+ body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #1c1f3a 0%, #0b0e14 60%);
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
 }
 
 /* CONTAINER DAS TELAS */
@@ -178,6 +185,11 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+#playlist-screen {
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
 #playlist-screen.show {
   transform: translateX(0);
   opacity: 1;
@@ -289,3 +301,4 @@ body {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
